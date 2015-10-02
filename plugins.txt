@@ -1,0 +1,7 @@
+jquery:1.11.2
+jquery-ui:1.0.2
+delivery-pipeline-plugin:0.9.7
+build-pipeline-plugin 1.2.3
+parameterized-trigger:0.9.7
+javadoc
+github:1.11.3
