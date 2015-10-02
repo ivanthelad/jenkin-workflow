@@ -1,0 +1,43 @@
+    <se.diabol.jenkins.pipeline.DeliveryPipelineView plugin="delivery-pipeline-plugin@0.9.7">
+      <owner class="hudson" reference="../../.."/>
+      <name>Delivery Pipeline</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <componentSpecs>
+        <se.diabol.jenkins.pipeline.DeliveryPipelineView_-ComponentSpec>
+          <name>Ticket Monster</name>
+          <firstJob>ticket-monster-build</firstJob>
+        </se.diabol.jenkins.pipeline.DeliveryPipelineView_-ComponentSpec>
+      </componentSpecs>
+      <noOfPipelines>3</noOfPipelines>
+      <showAggregatedPipeline>false</showAggregatedPipeline>
+      <noOfColumns>3</noOfColumns>
+      <sorting>none</sorting>
+      <showAvatars>false</showAvatars>
+      <updateInterval>2</updateInterval>
+      <showChanges>false</showChanges>
+      <allowManualTriggers>true</allowManualTriggers>
+      <regexpFirstJobs/>
+    </se.diabol.jenkins.pipeline.DeliveryPipelineView>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.4.8">
+      <owner class="hudson" reference="../../.."/>
+      <name>Build Pipeline</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <gridBuilder class="au.com.centrumsystems.hudson.plugin.buildpipeline.DownstreamProjectGridBuilder">
+        <firstJob>ticket-monster-build</firstJob>
+      </gridBuilder>
+      <noOfDisplayedBuilds>3</noOfDisplayedBuilds>
+      <buildViewTitle></buildViewTitle>
+      <consoleOutputLinkStyle>Lightbox</consoleOutputLinkStyle>
+      <cssUrl></cssUrl>
+      <triggerOnlyLatestJob>false</triggerOnlyLatestJob>
+      <alwaysAllowManualTrigger>false</alwaysAllowManualTrigger>
+      <showPipelineParameters>false</showPipelineParameters>
+      <showPipelineParametersInHeaders>false</showPipelineParametersInHeaders>
+      <startsWithParameters>false</startsWithParameters>
+      <refreshFrequency>3</refreshFrequency>
+      <showPipelineDefinitionHeader>false</showPipelineDefinitionHeader>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView>
