@@ -7,7 +7,9 @@ LABEL io.k8s.description="jenkins" \
       io.openshift.tags="jenkins"
 COPY plugins.txt /opt/openshift/configuration/plugins.txt
 RUN /usr/local/bin/plugins.sh /opt/openshift/configuration/plugins.txt
-
+ADD conf /tmp/conf
+RUN [ "bash", "-x", "/tmp/conf/addConf.sh" ]
+RUN mkdir /opt/openshift/configuration/jobs/Step{1,2,3}
 RUN mkdir /opt/openshift/configuration/jobs/ticket-monster-{analysis,build,deploy-dev,func-test,release,test}
 #ADD jobs/job-analysis.xml 		/var/lib/jenkins/jobs/ticket-monster-analysis/config.xml
 #ADD jobs/job-build.xml 			/var/lib/jenkins/jobs/ticket-monster-build/config.xml
@@ -20,3 +22,6 @@ ADD jobs/job-test-func.xml              /opt/openshift/configuration/jobs/ticket
 ADD jobs/job-test-int.xml               /opt/openshift/configuration/jobs/ticket-monster-test-int/config.xml
 ADD jobs/job-test-sys.xml               /opt/openshift/configuration/jobs/ticket-monster-test-sys/config.xml
 ADD jobs/job-test-perf.xml              /opt/openshift/configuration/jobs/ticket-monster-test-perf/config.xml
+ADD jobs/Step1.xml              /opt/openshift/configuration/jobs/Step1/config.xml
+ADD jobs/Step2.xml              /opt/openshift/configuration/jobs/Step2/config.xml
+ADD jobs/Step3.xml              /opt/openshift/configuration/jobs/Step3/config.xml
